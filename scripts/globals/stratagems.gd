@@ -1,12 +1,5 @@
 extends Node
 
-<<<<<<< HEAD
-var stratagems: Dictionary = {
-	"sentries": {
-		"machine gun": [DOWN, RIGHT, UP, LEFT]
-		}
-	}
-=======
 var sentries: Dictionary = {
 	"hmg emplacement" : [inputs.DOWN, inputs.UP, inputs.LEFT, inputs.RIGHT, inputs.RIGHT, inputs.LEFT],
 	"shield generator relay" : [inputs.DOWN, inputs.DOWN, inputs.LEFT, inputs.RIGHT, inputs.LEFT, inputs.RIGHT],
