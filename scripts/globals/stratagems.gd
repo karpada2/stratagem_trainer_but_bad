@@ -88,4 +88,3 @@ var misc: Dictionary = {
 	"seaf artillery" : [inputs.RIGHT, inputs.UP, inputs.UP, inputs.DOWN],
 	"global illumination flare" : [inputs.RIGHT, inputs.RIGHT, inputs.LEFT, inputs.LEFT]
 }
->>>>>>> a92ccf8 (added all stratagems with codes to stratagems.gd)
