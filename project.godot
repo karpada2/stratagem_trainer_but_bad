@@ -17,7 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Stratagems="*res://scripts/globals/stratagems.gd"
+stratagems="*res://scripts/globals/stratagems.gd"
+inputs="*res://scripts/globals/inputs.gd"
 
 [debug]
 
