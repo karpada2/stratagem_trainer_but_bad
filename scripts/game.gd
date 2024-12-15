@@ -32,12 +32,12 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if curr_index < strat.size():
-		curr_index = 0
-		
 		if Input.is_action_just_pressed(strat[curr_index]):
 			print(strat[curr_index])
 			curr_index += 1
+		
 	if not isInit and curr_index >= strat.size():
 		isInit = true
 		print("Whoo you done did it :)")
+		get_tree().quit()
 	
