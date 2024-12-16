@@ -12,7 +12,9 @@ var sentries: Dictionary = {
 	"autocannon sentry" : [inputs.DOWN, inputs.UP, inputs.RIGHT, inputs.UP, inputs.LEFT, inputs.UP],
 	"rocket sentry" : [inputs.DOWN, inputs.UP, inputs.RIGHT, inputs.RIGHT, inputs.LEFT],
 	"ems mortar sentry" : [inputs.DOWN, inputs.UP, inputs.RIGHT, inputs.DOWN, inputs.RIGHT],
-	"anti-tank mines" : [inputs.DOWN, inputs.LEFT, inputs.UP, inputs.UP]
+	"anti-tank mines" : [inputs.DOWN, inputs.LEFT, inputs.UP, inputs.UP],
+	"flame sentry" : [inputs.DOWN, inputs.UP, inputs.RIGHT, inputs.DOWN, inputs.UP, inputs.UP],
+	"anti-tank emplacement" : [inputs.DOWN, inputs.UP, inputs.LEFT, inputs.RIGHT, inputs.RIGHT, inputs.RIGHT]
 }
 
 var support_weapons: Dictionary = {
@@ -29,7 +31,10 @@ var support_weapons: Dictionary = {
 	"laser cannon" : [inputs.DOWN, inputs.LEFT, inputs.DOWN, inputs.UP, inputs.LEFT],
 	"arc thrower" : [inputs.DOWN, inputs.RIGHT, inputs.DOWN, inputs.UP, inputs.LEFT, inputs.LEFT],
 	"commando" : [inputs.DOWN, inputs.LEFT, inputs.UP, inputs.DOWN, inputs.RIGHT],
-	"sterilizer" : [inputs.DOWN, inputs.LEFT, inputs.UP, inputs.DOWN, inputs.LEFT]
+	"heavy machine gun" : [inputs.DOWN, inputs.LEFT, inputs.UP, inputs.DOWN, inputs.DOWN],
+	"airburst rocket launcher" : [inputs.DOWN, inputs.UP, inputs.UP, inputs.LEFT, inputs.RIGHT],
+	"sterilizer" : [inputs.DOWN, inputs.LEFT, inputs.UP, inputs.DOWN, inputs.LEFT],
+	"quasar cannon" : [inputs.DOWN, inputs.DOWN, inputs.UP, inputs.LEFT, inputs.RIGHT]
 }
 
 var backpacks: Dictionary = {
@@ -38,7 +43,9 @@ var backpacks: Dictionary = {
 	"ballistic shield backpack" : [inputs.DOWN, inputs.LEFT, inputs.DOWN, inputs.DOWN, inputs.UP, inputs.LEFT],
 	"shield generator pack" : [inputs.DOWN, inputs.UP, inputs.LEFT, inputs.RIGHT, inputs.LEFT, inputs.RIGHT],
 	"guard dog" : [inputs.DOWN, inputs.UP, inputs.LEFT, inputs.UP, inputs.RIGHT, inputs.DOWN],
-	"guard dog dog breath" : [inputs.DOWN, inputs.UP, inputs.LEFT, inputs.UP, inputs.RIGHT, inputs.UP]
+	"guard dog dog breath" : [inputs.DOWN, inputs.UP, inputs.LEFT, inputs.UP, inputs.RIGHT, inputs.UP],
+	"directional shield" : [inputs.DOWN, inputs.UP, inputs.LEFT, inputs.RIGHT, inputs.UP, inputs.UP],
+	"jump pack" : [inputs.DOWN, inputs.UP, inputs.UP, inputs.DOWN, inputs.UP]
 }
 
 var orbitals: Dictionary = {
@@ -57,7 +64,6 @@ var orbitals: Dictionary = {
 }
 
 var eagles: Dictionary = {
-	"eagle rearm" : [inputs.UP, inputs.UP, inputs.LEFT, inputs.UP, inputs.RIGHT],
 	"eagle strafing run" : [inputs.UP, inputs.RIGHT, inputs.RIGHT],
 	"eagle airstrike" : [inputs.UP, inputs.RIGHT, inputs.DOWN, inputs.RIGHT],
 	"eagle cluster bomb" : [inputs.UP, inputs.RIGHT, inputs.DOWN, inputs.DOWN, inputs.RIGHT],
@@ -76,8 +82,10 @@ var misc: Dictionary = {
 	"sos beacon" : [inputs.UP, inputs.DOWN, inputs.RIGHT, inputs.UP],
 	"reinforce" : [inputs.UP, inputs.DOWN, inputs.RIGHT, inputs.LEFT, inputs.UP],
 	"upload data" : [inputs.LEFT, inputs.RIGHT, inputs.UP, inputs.UP, inputs.UP],
+	"eagle rearm" : [inputs.UP, inputs.UP, inputs.LEFT, inputs.UP, inputs.RIGHT],
 	"hellbomb" : [inputs.DOWN, inputs.UP, inputs.LEFT, inputs.DOWN, inputs.UP, inputs.RIGHT, inputs.DOWN, inputs.UP],
 	"resupply" : [inputs.DOWN, inputs.DOWN, inputs.UP, inputs.RIGHT],
 	"seaf artillery" : [inputs.RIGHT, inputs.UP, inputs.UP, inputs.DOWN],
-	"global illumination flare" : [inputs.RIGHT, inputs.RIGHT, inputs.LEFT, inputs.LEFT]
+	"sssd delivery" : [inputs.DOWN, inputs.DOWN, inputs.DOWN, inputs.UP, inputs.UP],
+	"orbital illumination flare" : [inputs.RIGHT, inputs.RIGHT, inputs.LEFT, inputs.LEFT]
 }
