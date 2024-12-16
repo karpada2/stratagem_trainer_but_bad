@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 stratagems="*res://scripts/globals/stratagems.gd"
 inputs="*res://scripts/globals/inputs.gd"
+stratagem_icons="*res://scripts/globals/stratagem_icons.gd"
 
 [debug]
 
