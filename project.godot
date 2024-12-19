@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 stratagems="*res://scripts/globals/stratagem_inputs.gd"
 inputs="*res://scripts/globals/inputs.gd"
 stratagem_icons="*res://scripts/globals/stratagem_icons.gd"
+stratagem_names="*res://scripts/globals/stratagem_names.gd"
 
 [debug]
 
