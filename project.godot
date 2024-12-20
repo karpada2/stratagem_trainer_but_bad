@@ -27,6 +27,11 @@ stratagem_names="*res://scripts/globals/stratagem_names.gd"
 gdscript/warnings/untyped_declaration=2
 gdscript/warnings/inferred_declaration=2
 
+[display]
+
+window/size/mode=2
+window/stretch/mode="canvas_items"
+
 [input]
 
 ui_right={
@@ -61,6 +66,10 @@ stratagem_right={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_2="Layer 2"
+
 [rendering]
 
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+environment/defaults/default_clear_color=Color(0.152079, 0.306388, 0.618248, 1)

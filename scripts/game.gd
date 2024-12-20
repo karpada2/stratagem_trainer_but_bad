@@ -1,18 +1,24 @@
 extends Node2D
 
 
-var strat: String = "eagle 500kg bomb"
+var strat: String
+
+@onready var main_menu: MainMenu = $MainMenu
 @onready var stratagem: Stratagem = $Stratagem
+@onready var keybinds_menu: KeybindsMenu = $KeybindsMenu
 
 var hasFailed: bool = false
+var hasSuccessed: bool = false
 
 func _ready() -> void:
+	main_menu.play.connect(_switch_to_stratagem)
+	main_menu.keybinds.connect(_switch_to_keybind)
 	stratagem.success.connect(_stratagem_success)
 	stratagem.failure.connect(_stratagem_failure)
-	stratagem.set_stratagem(strat)
+	keybinds_menu.finished_rebind.connect(_switch_to_main_menu)
 
 func _process(_delta: float) -> void:
-	if not hasFailed:
+	if not hasFailed and not hasSuccessed and stratagem.visible:
 		if Input.is_action_just_pressed(inputs.UP):
 			stratagem.set_input(inputs.UP)
 		elif Input.is_action_just_pressed(inputs.DOWN):
@@ -21,13 +27,55 @@ func _process(_delta: float) -> void:
 			stratagem.set_input(inputs.RIGHT)
 		elif Input.is_action_just_pressed(inputs.LEFT):
 			stratagem.set_input(inputs.LEFT)
+	if Input.is_action_just_pressed("ui_cancel"):
+		if stratagem.visible or keybinds_menu.visible:
+			_switch_to_main_menu()
+		else:
+			get_tree().quit()
 
 func _stratagem_success() -> void:
-	print("YOU NO SUCK :D")
-	get_tree().quit()
+	hasSuccessed = true
+	await get_tree().create_timer(0.5).timeout
+	hasSuccessed = false
+	strat = get_random_stratagem()
+	stratagem.set_stratagem(strat)
 
 func _stratagem_failure() -> void:
 	hasFailed = true
 	await get_tree().create_timer(0.5).timeout
 	hasFailed = false
 	stratagem.set_stratagem(strat)
+
+func _switch_to_main_menu() -> void:
+	main_menu.visible = true
+	main_menu.process_mode = Node.PROCESS_MODE_INHERIT
+	stratagem.visible = false
+	stratagem.process_mode = Node.PROCESS_MODE_DISABLED
+	keybinds_menu.visible = false
+	keybinds_menu.process_mode = Node.PROCESS_MODE_DISABLED
+
+func _switch_to_stratagem() -> void:
+	stratagem.process_mode = Node.PROCESS_MODE_INHERIT
+	strat = get_random_stratagem()
+	stratagem.set_stratagem(strat)
+	stratagem.visible = true
+	main_menu.visible = false
+	main_menu.process_mode = Node.PROCESS_MODE_DISABLED
+	keybinds_menu.visible = false
+	keybinds_menu.process_mode = Node.PROCESS_MODE_DISABLED
+
+func _switch_to_keybind() -> void:
+	main_menu.visible = false
+	main_menu.process_mode = Node.PROCESS_MODE_DISABLED
+	stratagem.visible = false
+	stratagem.process_mode = Node.PROCESS_MODE_DISABLED
+	keybinds_menu.visible = true
+	keybinds_menu.process_mode = Node.PROCESS_MODE_INHERIT
+
+# returns a random stratagem name, weighted
+func get_random_stratagem() -> String:
+	var all_strats: Array[String]
+	for i: String in stratagems.dict_names:
+		all_strats.append_array(stratagems.get_dictionary_by_name(i).keys())
+	var index: int = randi_range(0, all_strats.size() - 1)
+	return all_strats[index]

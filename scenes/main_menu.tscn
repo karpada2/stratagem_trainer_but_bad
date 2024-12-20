@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://xnn1qne03voe"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_1mnap"]
+[ext_resource type="Theme" uid="uid://kmyiundly0s5" path="res://assets/themes/gui_buttons.tres" id="2_2bukn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pr2vi"]
+font_size = 80
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1mnap")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 466.0
+offset_top = 243.0
+offset_right = 686.0
+offset_bottom = 596.0
+theme_override_constants/separation = 64
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("2_2bukn")
+theme_override_font_sizes/font_size = 48
+text = "Play"
+
+[node name="Keybinds" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("2_2bukn")
+theme_override_font_sizes/font_size = 48
+text = "Keybinds"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_2bukn")
+theme_override_font_sizes/font_size = 48
+text = "Quit"
+
+[node name="GameName" type="Label" parent="."]
+offset_top = 32.0
+offset_right = 1152.0
+offset_bottom = 160.0
+text = "Stratagem Hero But Scuffed"
+label_settings = SubResource("LabelSettings_pr2vi")
+horizontal_alignment = 1
+vertical_alignment = 1

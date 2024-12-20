@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdyobnhsgr1s6"]
+
+[ext_resource type="Script" path="res://scripts/keybinds_menu.gd" id="1_4epi8"]
+
+[node name="KeybindsMenu" type="Label"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "aaaaaaa"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_4epi8")

@@ -1,9 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://ouh1xj1mepia"]
+[gd_scene load_steps=5 format=3 uid="uid://ouh1xj1mepia"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_qu7ep"]
+[ext_resource type="PackedScene" uid="uid://xnn1qne03voe" path="res://scenes/main_menu.tscn" id="2_ly3ha"]
 [ext_resource type="PackedScene" uid="uid://dyv3uj3fb4kg6" path="res://scenes/stratagem.tscn" id="2_sqpgc"]
+[ext_resource type="PackedScene" uid="uid://bdyobnhsgr1s6" path="res://scenes/keybinds_menu.tscn" id="4_smd28"]
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_qu7ep")
 
+[node name="MainMenu" parent="." instance=ExtResource("2_ly3ha")]
+
 [node name="Stratagem" parent="." instance=ExtResource("2_sqpgc")]
+process_mode = 4
+visible = false
+
+[node name="KeybindsMenu" parent="." instance=ExtResource("4_smd28")]
+process_mode = 4
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 1
+grow_vertical = 1
