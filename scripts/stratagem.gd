@@ -13,21 +13,11 @@ var curr_input_index: int = 0
 @onready var directions_container: HBoxContainer = $CenterContainer/HBoxContainer/InputDirections
 @onready var stratagem_label: Label = $stratagem_name
 
-var dict_names: Array[String] = [
-	"sentries",
-	"support_weapons",
-	"backpacks",
-	"orbitals",
-	"eagles",
-	"exosuits",
-	"misc"
-]
-
 
 var _stratagem_class: String
 var stratagem_name: String:
 	set(new_value):
-		for i: String in dict_names:
+		for i: String in stratagems.dict_names:
 			if stratagems.get_dictionary_by_name(i) != {} and stratagems.get_dictionary_by_name(i).has(new_value):
 				stratagem_name = new_value
 				_stratagem_class = i

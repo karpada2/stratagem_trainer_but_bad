@@ -106,3 +106,13 @@ func get_dictionary_by_name(dict_name: String) -> Dictionary:
 	elif dict_name == "misc":
 		return misc
 	return {}
+
+var dict_names: Array[String] = [
+	"sentries",
+	"support_weapons",
+	"backpacks",
+	"orbitals",
+	"eagles",
+	"exosuits",
+	"misc"
+]
