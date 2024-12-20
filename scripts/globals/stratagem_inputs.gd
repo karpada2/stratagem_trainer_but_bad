@@ -89,3 +89,20 @@ var misc: Dictionary = {
 	"sssd delivery" : [inputs.DOWN, inputs.DOWN, inputs.DOWN, inputs.UP, inputs.UP],
 	"orbital illumination flare" : [inputs.RIGHT, inputs.RIGHT, inputs.LEFT, inputs.LEFT]
 }
+
+func get_dictionary_by_name(dict_name: String) -> Dictionary:
+	if dict_name == "sentries":
+		return sentries
+	elif dict_name == "support_weapons":
+		return support_weapons
+	elif dict_name == "backpacks":
+		return backpacks
+	elif dict_name == "orbitals":
+		return orbitals
+	elif dict_name == "eagles":
+		return eagles
+	elif dict_name == "exosuits":
+		return exosuits
+	elif dict_name == "misc":
+		return misc
+	return {}

@@ -95,3 +95,21 @@ var misc: Dictionary = {
 	"eagle rearm" : preload("res://assets/sprites/stratagem_icons/misc/eagle rearm.svg"),
 	"sssd delivery" : preload("res://assets/sprites/stratagem_icons/misc/sssd delivery.svg")
 }
+
+
+func get_dictionary_by_name(dict_name: String) -> Dictionary:
+	if dict_name == "sentries":
+		return sentries
+	elif dict_name == "support_weapons":
+		return support_weapons
+	elif dict_name == "backpacks":
+		return backpacks
+	elif dict_name == "orbitals":
+		return orbitals
+	elif dict_name == "eagles":
+		return eagles
+	elif dict_name == "exosuits":
+		return exosuits
+	elif dict_name == "misc":
+		return misc
+	return {}
