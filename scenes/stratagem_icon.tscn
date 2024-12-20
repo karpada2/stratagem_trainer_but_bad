@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgn16lt5t6hon"]
+
+[ext_resource type="Script" path="res://scripts/stratagem_icon.gd" id="1_olo5m"]
+[ext_resource type="Texture2D" uid="uid://2wxwr5fv0hcb" path="res://assets/sprites/stratagem_icons/sentries/anti-personnel minefield.svg" id="2_ubmid"]
+
+[node name="StratagemIcon" type="ColorRect"]
+custom_minimum_size = Vector2(128, 128)
+color = Color(0.10748, 0.10748, 0.10748, 1)
+script = ExtResource("1_olo5m")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_ubmid")

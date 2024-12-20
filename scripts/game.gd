@@ -1,43 +1,33 @@
 extends Node2D
 
 
-var strat: Array = stratagems.eagles.get("eagle 500kg bomb")
-var curr_index: int = 0
-var isInit: bool = false
+var strat: String = "eagle 500kg bomb"
+@onready var stratagem: Stratagem = $Stratagem
 
+var hasFailed: bool = false
 
-var up: String = "↑"
-var down: String = "↓"
-var left: String = "←"
-var right: String = "→"
-
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var out: String = ""
-	for i: String in strat:
-		if i == "stratagem_up":
-			out += up
-		elif i == "stratagem_down":
-			out += down
-		elif i == "stratagem_left":
-			out += left
-		elif i == "stratagem_right":
-			out += right
-	
-	print(out)
+	stratagem.success.connect(_stratagem_success)
+	stratagem.failure.connect(_stratagem_failure)
+	stratagem.set_stratagem(strat)
 
+func _process(_delta: float) -> void:
+	if not hasFailed:
+		if Input.is_action_just_pressed(inputs.UP):
+			stratagem.set_input(inputs.UP)
+		elif Input.is_action_just_pressed(inputs.DOWN):
+			stratagem.set_input(inputs.DOWN)
+		elif Input.is_action_just_pressed(inputs.RIGHT):
+			stratagem.set_input(inputs.RIGHT)
+		elif Input.is_action_just_pressed(inputs.LEFT):
+			stratagem.set_input(inputs.LEFT)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if curr_index < strat.size():
-		if Input.is_action_just_pressed(strat[curr_index]):
-			print(strat[curr_index])
-			curr_index += 1
-		
-	if not isInit and curr_index >= strat.size():
-		isInit = true
-		print("Whoo you done did it :)")
-		get_tree().quit()
-	
+func _stratagem_success() -> void:
+	print("YOU NO SUCK :D")
+	get_tree().quit()
+
+func _stratagem_failure() -> void:
+	hasFailed = true
+	await get_tree().create_timer(0.5).timeout
+	hasFailed = false
+	stratagem.set_stratagem(strat)
