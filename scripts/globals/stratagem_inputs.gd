@@ -54,7 +54,7 @@ var orbitals: Dictionary = {
 	"orbital 120mm he barrage" : [inputs.RIGHT, inputs.RIGHT, inputs.DOWN, inputs.LEFT, inputs.RIGHT, inputs.DOWN],
 	"orbital 380mm he barrage" : [inputs.RIGHT, inputs.DOWN, inputs.UP, inputs.UP, inputs.LEFT, inputs.DOWN, inputs.DOWN],
 	"orbital walking barrage" : [inputs.RIGHT, inputs.DOWN, inputs.RIGHT, inputs.DOWN, inputs.RIGHT, inputs.DOWN],
-	"orbital laser strike" : [inputs.RIGHT, inputs.DOWN, inputs.UP, inputs.RIGHT, inputs.DOWN],
+	"orbital laser" : [inputs.RIGHT, inputs.DOWN, inputs.UP, inputs.RIGHT, inputs.DOWN],
 	"orbital railcannon strike" : [inputs.RIGHT, inputs.UP, inputs.DOWN, inputs.DOWN, inputs.RIGHT],
 	"orbital precision strike" : [inputs.RIGHT, inputs.RIGHT, inputs.UP],
 	"orbital gas strike" : [inputs.RIGHT, inputs.RIGHT, inputs.DOWN, inputs.RIGHT],

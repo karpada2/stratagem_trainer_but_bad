@@ -34,7 +34,7 @@ var support_weapons: Dictionary = {
 	"commando" : "Commando",
 	"autocannon" : "Autocannon",
 	"arc thrower" : "Arc Thrower",
-	"anti-materiel rifle" : "Anti-Materiel Rifle",
+	"anti-material rifle" : "Anti-Material Rifle",
 	"airburst rocket launcher" : "Airburst Rocket Launcher"
 }
 

@@ -34,7 +34,7 @@ var support_weapons: Dictionary = {
 	"commando" : preload("res://assets/sprites/stratagem_icons/support_weapons/commando.svg"),
 	"autocannon" : preload("res://assets/sprites/stratagem_icons/support_weapons/autocannon.svg"),
 	"arc thrower" : preload("res://assets/sprites/stratagem_icons/support_weapons/arc thrower.svg"),
-	"anti-materiel rifle" : preload("res://assets/sprites/stratagem_icons/support_weapons/anti-materiel rifle.svg"),
+	"anti-material rifle" : preload("res://assets/sprites/stratagem_icons/support_weapons/anti-materiel rifle.svg"),
 	"airburst rocket launcher" : preload("res://assets/sprites/stratagem_icons/support_weapons/airburst rocket launcher.svg")
 }
 
