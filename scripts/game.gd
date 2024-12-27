@@ -9,6 +9,7 @@ var strat: String
 
 var hasFailed: bool = false
 var hasSuccessed: bool = false
+var stratagems_stack: Array[String]
 
 func _ready() -> void:
 	main_menu.play.connect(_switch_to_stratagem)
@@ -37,8 +38,9 @@ func _stratagem_success() -> void:
 	hasSuccessed = true
 	await get_tree().create_timer(0.5).timeout
 	hasSuccessed = false
-	strat = get_random_stratagem()
-	stratagem.set_stratagem(strat)
+	stratagem.set_stratagem(stratagems_stack.pop_back())
+	if stratagems_stack.is_empty():
+		update_stratagems_stack()
 
 func _stratagem_failure() -> void:
 	hasFailed = true
@@ -56,8 +58,8 @@ func _switch_to_main_menu() -> void:
 
 func _switch_to_stratagem() -> void:
 	stratagem.process_mode = Node.PROCESS_MODE_INHERIT
-	strat = get_random_stratagem()
-	stratagem.set_stratagem(strat)
+	update_stratagems_stack()
+	stratagem.set_stratagem(stratagems_stack.pop_back())
 	stratagem.visible = true
 	main_menu.visible = false
 	main_menu.process_mode = Node.PROCESS_MODE_DISABLED
@@ -73,9 +75,9 @@ func _switch_to_keybind() -> void:
 	keybinds_menu.process_mode = Node.PROCESS_MODE_INHERIT
 
 # returns a random stratagem name, weighted
-func get_random_stratagem() -> String:
+func update_stratagems_stack() -> void:
 	var all_strats: Array[String]
 	for i: String in stratagems.dict_names:
 		all_strats.append_array(stratagems.get_dictionary_by_name(i).keys())
-	var index: int = randi_range(0, all_strats.size() - 1)
-	return all_strats[index]
+	all_strats.shuffle()
+	stratagems_stack = all_strats
